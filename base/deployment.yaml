@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: http-echo
+  labels:
+    run: http-echo
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: http-echo
+    spec:
+      containers:
+        - name: http-echo
+          image: hashicorp/http-echo:0.2.3
+          imagePullPolicy: IfNotPresent
+          args:
+            - "-text=hello world"
+          ports:
+            - name: http
+              containerPort: 5678
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http

@@ -1,0 +1,11 @@
+bases:
+- ./../base
+
+patchesStrategicMerge:
+- pod-template-patch.yaml
+
+commonLabels:
+  env: production
+
+
+namePrefix: production-

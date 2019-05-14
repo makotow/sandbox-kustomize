@@ -1,0 +1,10 @@
+bases:
+- ./../base
+
+patchesStrategicMerge:
+- pod-template-patch.yaml
+
+commonLabels:
+  env: staging
+  
+namePrefix: staging-
