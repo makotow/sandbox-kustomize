@@ -12,24 +12,24 @@ kubectl create -f service.yaml
 ### Generate manifest file
 
 ``` sh
-kubectl kustomize ./staging
+kubectl kustomize ./v1
 ```
 
 or 
 
 ``` sh
-kubectl kustomize ./production
+kubectl kustomize ./v2
 ```
 
 
 ### Deploy manifest
 
 ``` sh
-kubectl apply --kustomize ./staging
+kubectl apply --kustomize ./v2
 ```
 
 or 
 
 ``` sh
-kubectl apply --kustomize ./production
+kubectl apply --kustomize ./v2
 ```

@@ -5,7 +5,6 @@ patchesStrategicMerge:
 - pod-template-patch.yaml
 
 commonLabels:
-  env: production
-
-
-namePrefix: production-
+  version: v1
+  
+namePrefix: v1-
